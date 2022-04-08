@@ -1,0 +1,48 @@
+﻿@model TarefaModel
+@{
+    ViewData["Title"] = "Criação de Tarefas";
+}
+
+<div class="text-center">
+    <h1>Cadastrar Tarefa</h1>
+</div>
+
+<form asp-controller="Tarefas" asp-action="Criar" method="post">
+    <div class="form-group">
+        <label for="Titulo">Título da tarefa</label>
+        <input type="text" asp-for="Titulo" class="form-control" placeholder="Digite o titulo da tarefa">
+    </div>
+
+    <div class="form-group">
+        <label for="Descricao">Descrição da tarefa</label>
+        <input type="text" asp-for="Descricao" class="form-control" placeholder="Descrição da tarefa">
+    </div>
+
+    <div class="form-group">
+        <label for="Data">Data da tarefa</label>
+        <input  min="08-04-2022" max="2099-12-30" required type="date" asp-for="Data" class="form-control" placeholder="Data da tarefa">
+    </div>
+
+    <div class="form-group">
+        <label for="Inicio">Hora inicio</label>
+        <input type="time" asp-for="Inicio" class="form-control" placeholder="Hora inicio">
+    </div>
+
+    <div class="form-group">
+        <label for="Fim">Hora fim</label>
+        <input type="time" asp-for="Fim" class="form-control" placeholder="Hora fim">
+    </div>
+
+    <div class="form-group">
+        <label for="Prioridade">Prioridade (Alta, Media e Baixa)</label>
+        <input type="text" asp-for="Prioridade" class="form-control" placeholder="Prioridade (Alta, Media e Baixa)">
+    </div>
+
+    <div class="form-group">
+        <label for="Finalizada">Tarefa finalizada?</label>
+        <input type="text" asp-for="Finalizada" class="form-control" placeholder="Tarefa finalizada?">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    <a class="btn btn-danger btn-block" asp-controller="Tarefas" asp-action="Index" role="button">Voltar</a>
+</form>
+
